@@ -1,22 +1,22 @@
-<<<<<<< HEAD
 # MERN Blog DevOps Deployment
 
-A production-ready MERN blog application prepared for a university DevOps and deployment assignment. This repo contains a React (Vite) client, an Express API server, and a CI pipeline for build verification.
+Full‑stack MERN blog application prepared for a DevOps and deployment assignment. The repository contains a Vite React client, an Express API server, and a GitHub Actions CI pipeline.
 
-**Project Overview**
-- Full-stack blog with authentication, posts, categories, and comments.
-- Environment-driven configuration for dev and production.
-- Production middleware, centralized error handling, and health checks.
-- CI pipeline for installs, build, and basic backend app check.
+**Features**
+- Authentication (JWT)
+- Posts, categories, and comments
+- Centralized error handling and health check
+- Production middleware (`helmet`, `morgan`)
+- CI pipeline for install, test, build, and backend load check
 
 **Tech Stack**
 - Frontend: React, Vite, React Router, Axios
 - Backend: Node.js, Express, Mongoose, JWT
-- DevOps: GitHub Actions, Render/Railway (backend), Vercel (frontend)
+- CI: GitHub Actions
 - Monitoring: Morgan logs, optional Sentry
 
 **Project Structure**
-- `client` React frontend (Vite)
+- `client` Vite React frontend
 - `server` Express backend
 - `.github/workflows/ci.yml` CI pipeline
 - `.env.example` root environment template
@@ -32,7 +32,7 @@ npm install
 2. Configure environment variables
 ```bash
 # client/.env.development
-REACT_APP_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5000/api
 
 # server/.env
 PORT=5000
@@ -52,7 +52,7 @@ npm run dev
 ```
 
 **Environment Variables**
-- Client: `REACT_APP_API_URL` Base URL of the backend API (e.g. `https://your-backend.onrender.com/api`)
+- Client: `VITE_API_URL` Base URL of the backend API (e.g. `https://your-backend.onrender.com/api`)
 - Server: `PORT` Express port
 - Server: `MONGO_URI` MongoDB Atlas connection string
 - Server: `JWT_SECRET` JWT signing secret
@@ -79,7 +79,7 @@ Backend deployed URL: `TODO_ADD_BACKEND_URL`
 **Frontend Deployment (Vercel)**
 1. Import the repo and set the root to `client`.
 2. Set build command to `npm run build` and output to `dist`.
-3. Add `REACT_APP_API_URL` with your backend URL.
+3. Add `VITE_API_URL` with your backend URL.
 4. Deploy and verify:
 Frontend deployed URL: `TODO_ADD_FRONTEND_URL`
 
@@ -90,7 +90,7 @@ Frontend deployed URL: `TODO_ADD_FRONTEND_URL`
 - Builds the React client.
 - Runs tests when present.
 - Performs a backend app load check.
-- Add CI screenshots here:
+- Add CI screenshots:
 `TODO_ADD_CI_SCREENSHOT_1`
 `TODO_ADD_CI_SCREENSHOT_2`
 
@@ -104,82 +104,3 @@ Frontend deployed URL: `TODO_ADD_FRONTEND_URL`
 - Use strong secrets for `JWT_SECRET`.
 - Use HTTPS for frontend and backend URLs.
 - Keep `MONGO_URI` and secrets out of version control.
-=======
-# Deployment and DevOps for MERN Applications
-
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
-
-## Assignment Overview
-
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
-
-## Files Included
-
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
-
-## Requirements
-
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
-
-## Deployment Platforms
-
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
-
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
-
-## CI/CD Pipeline
-
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
-
-## Submission
-
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
-
-## Resources
-
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
->>>>>>> 75d98ac650dbfbdd14dcd9a52b32b5dfec8ceeda
