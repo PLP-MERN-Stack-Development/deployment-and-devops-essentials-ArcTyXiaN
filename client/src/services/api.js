@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || '/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
-if (!process.env.REACT_APP_API_URL) {
-  console.warn('REACT_APP_API_URL is not set. Falling back to /api.');
+if (!import.meta.env.VITE_API_URL) {
+  console.warn('VITE_API_URL is not set. Falling back to /api.');
 }
 
 const api = axios.create({

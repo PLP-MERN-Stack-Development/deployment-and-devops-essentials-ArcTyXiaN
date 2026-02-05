@@ -21,7 +21,7 @@
     "cors": "^2.8.5",
     "helmet": "^7.2.0",
     "morgan": "^1.10.0",
-    "@sentry/node": "^8.59.0"
+    "@sentry/node": "^10.10.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
